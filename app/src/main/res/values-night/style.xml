@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Стили кнопок -->
+    <style name="ButtonStyle">
+        <item name="android:layout_height">@dimen/button_height</item>
+        <item name="android:layout_width"> 0dp </item>
+        <item name="android:layout_marginVertical"> @dimen/btn_bottom_margin</item>
+        <item name="android:textSize"> @dimen/button_text_size</item>
+        <item name="layout_constraintWidth_percent"> @dimen/button_width_percent</item>
+        <item name="android:padding"> 1dp </item>
+    </style>
+
+    <style name="ButtonEqualsLight" parent="ButtonStyle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:backgroundTint">@color/orange</item>
+    </style>
+
+    <style name="ButtonNumberLight" parent="ButtonStyle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:backgroundTint">@color/darkest_gray</item>
+    </style>
+
+    <style name="ButtonSingLight" parent="ButtonStyle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:backgroundTint">@color/darker_gray</item>
+    </style>
+
+    <!-- Стили для кнопки с настройками (3 точки) -->
+    <style name="BasedImageStyle">
+        <item name="android:src">@drawable/white_points</item>
+        <item name="android:backgroundTint">@color/black</item>
+    </style>
+
+    <style name="ButtonImagePoints" parent="BasedImageStyle">
+        <item name="android:layout_width">@dimen/image_width</item>
+        <item name="android:layout_height">@dimen/image_height</item>
+        <item name="android:scaleType">centerCrop</item>
+
+        <item name="android:layout_marginRight"> 15dp </item>
+
+        <item name="layout_constraintEnd_toEndOf"> parent</item>
+        <item name="layout_constraintTop_toTopOf"> parent</item>
+    </style>
+
+</resources>

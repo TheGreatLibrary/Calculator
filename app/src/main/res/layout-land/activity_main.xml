@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    tools:context=".MainActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:layout_marginVertical="@dimen/margin_vertical"
+    android:fitsSystemWindows="true">
+
+    <ImageButton
+        android:id="@+id/menuButton"
+        style="@style/ButtonImagePoints"
+        android:layout_gravity="right"
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/textBox"
+        style="@style/TextBox"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/TextViewStyle"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/grid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Первая строка -->
+
+        <Button
+            android:id="@+id/deleteAll"
+            style="@style/ButtonSingLight"
+            android:onClick="Delete_Click"
+            android:text="C"
+            app:layout_constraintEnd_toStartOf="@+id/deleteOnce"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/deleteOnce"
+            style="@style/ButtonSingLight"
+            android:onClick="Delete_Click"
+            android:text="D"
+            app:layout_constraintEnd_toStartOf="@+id/doubleZero"
+            app:layout_constraintStart_toEndOf="@id/deleteAll"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/doubleZero"
+            style="@style/ButtonNumberLight"
+            android:onClick="Numbers_Click"
+            android:text="00"
+            app:layout_constraintEnd_toStartOf="@+id/seven"
+            app:layout_constraintStart_toEndOf="@id/deleteOnce"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/seven"
+            style="@style/ButtonNumberLight"
+            android:onClick="Numbers_Click"
+            android:text="7"
+            app:layout_constraintEnd_toStartOf="@+id/eight"
+            app:layout_constraintStart_toEndOf="@id/doubleZero"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/eight"
+            style="@style/ButtonNumberLight"
+            android:onClick="Numbers_Click"
+            android:text="8"
+            app:layout_constraintEnd_toStartOf="@+id/nine"
+            app:layout_constraintStart_toEndOf="@id/seven"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/nine"
+            style="@style/ButtonNumberLight"
+            android:onClick="Numbers_Click"
+            android:text="9"
+            app:layout_constraintEnd_toStartOf="@+id/divSign"
+            app:layout_constraintStart_toEndOf="@id/eight"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/divSign"
+            style="@style/ButtonSingLight"
+            android:onClick="Signs_Click"
+            android:text="/"
+            app:layout_constraintEnd_toStartOf="@+id/minus"
+            app:layout_constraintStart_toEndOf="@id/nine"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/minus"
+            style="@style/ButtonSingLight"
+            android:onClick="Signs_Click"
+            android:text="-"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/divSign"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Вторая строка -->
+
+        <Button
+            android:id="@+id/openBr"
+            style="@style/ButtonSingLight"
+            android:onClick="Brackets_Click"
+            android:text="("
+            app:layout_constraintEnd_toStartOf="@id/closeBr"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/deleteAll"
+            />
+
+        <Button
+            android:id="@+id/closeBr"
+            style="@style/ButtonSingLight"
+            android:onClick="Brackets_Click"
+            android:text=")"
+            app:layout_constraintEnd_toStartOf="@id/zero"
+            app:layout_constraintStart_toEndOf="@id/openBr"
+            app:layout_constraintTop_toBottomOf="@id/deleteOnce" />
+
+        <Button
+            android:id="@+id/zero"
+            style="@style/ButtonNumberLight"
+            android:onClick="Numbers_Click"
+            android:text="0"
+            app:layout_constraintEnd_toStartOf="@id/four"
+            app:layout_constraintStart_toEndOf="@id/closeBr"
+            app:layout_constraintTop_toBottomOf="@id/doubleZero" />
+
+        <Button
+            android:id="@+id/four"
+            style="@style/ButtonNumberLight"
+            android:onClick="Numbers_Click"
+            android:text="4"
+            app:layout_constraintEnd_toStartOf="@id/five"
+            app:layout_constraintStart_toEndOf="@id/zero"
+            app:layout_constraintTop_toBottomOf="@id/seven" />
+
+        <Button
+            android:id="@+id/five"
+            style="@style/ButtonNumberLight"
+            android:onClick="Numbers_Click"
+            android:text="5"
+            app:layout_constraintEnd_toStartOf="@id/six"
+            app:layout_constraintStart_toEndOf="@id/four"
+            app:layout_constraintTop_toBottomOf="@id/eight" />
+
+        <Button
+            android:id="@+id/six"
+            style="@style/ButtonNumberLight"
+            android:onClick="Numbers_Click"
+            android:text="6"
+            app:layout_constraintEnd_toStartOf="@id/multy"
+            app:layout_constraintStart_toEndOf="@id/five"
+            app:layout_constraintTop_toBottomOf="@id/nine" />
+
+        <Button
+            android:id="@+id/multy"
+            style="@style/ButtonSingLight"
+            android:onClick="Signs_Click"
+            android:text="*"
+            app:layout_constraintEnd_toStartOf="@id/plus"
+            app:layout_constraintStart_toEndOf="@id/six"
+            app:layout_constraintTop_toBottomOf="@id/divSign" />
+
+        <Button
+            android:id="@+id/plus"
+            style="@style/ButtonSingLight"
+            android:onClick="Signs_Click"
+            android:text="+"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/multy"
+            app:layout_constraintTop_toBottomOf="@id/minus" />
+
+        <!-- Третья строка -->
+
+        <Button
+            android:id="@+id/powSign"
+            style="@style/ButtonSingLight"
+            android:text="^"
+            app:layout_constraintEnd_toStartOf="@id/sqrtSign"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/openBr" />
+
+        <Button
+            android:id="@+id/sqrtSign"
+            style="@style/ButtonSingLight"
+            android:text="√"
+            app:layout_constraintEnd_toStartOf="@id/comma"
+            app:layout_constraintStart_toEndOf="@id/powSign"
+            app:layout_constraintTop_toBottomOf="@id/closeBr" />
+
+        <Button
+            android:id="@+id/comma"
+            style="@style/ButtonNumberLight"
+            android:onClick="Comma_Click"
+            android:text=","
+            app:layout_constraintEnd_toStartOf="@id/one"
+            app:layout_constraintStart_toEndOf="@id/sqrtSign"
+            app:layout_constraintTop_toBottomOf="@id/zero" />
+
+        <Button
+            android:id="@+id/one"
+            style="@style/ButtonNumberLight"
+            android:onClick="Numbers_Click"
+            android:text="1"
+            app:layout_constraintEnd_toStartOf="@id/two"
+            app:layout_constraintStart_toEndOf="@id/comma"
+            app:layout_constraintTop_toBottomOf="@id/four" />
+
+        <Button
+            android:id="@+id/two"
+            style="@style/ButtonNumberLight"
+            android:onClick="Numbers_Click"
+            android:text="2"
+            app:layout_constraintEnd_toStartOf="@id/three"
+            app:layout_constraintStart_toEndOf="@id/one"
+            app:layout_constraintTop_toBottomOf="@id/five" />
+
+        <Button
+            android:id="@+id/three"
+            style="@style/ButtonNumberLight"
+            android:onClick="Numbers_Click"
+            android:text="3"
+            app:layout_constraintEnd_toStartOf="@id/percent"
+            app:layout_constraintStart_toEndOf="@id/two"
+            app:layout_constraintTop_toBottomOf="@id/six" />
+
+        <Button
+            android:id="@+id/percent"
+            style="@style/ButtonSingLight"
+            android:onClick="Percent_Click"
+            android:text="%"
+            app:layout_constraintEnd_toStartOf="@id/equals"
+            app:layout_constraintStart_toEndOf="@id/three"
+            app:layout_constraintTop_toBottomOf="@id/multy" />
+
+        <Button
+            android:id="@+id/equals"
+            style="@style/ButtonEqualsLight"
+            android:onClick="Equals_Click"
+            android:text="="
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/percent"
+            app:layout_constraintTop_toBottomOf="@id/plus" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

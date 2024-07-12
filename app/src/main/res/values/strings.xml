@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Calculator</string>
+    <string name="logo"> Калькулятор </string>
+    <string name="hint_1"> Введите 1 число</string>
+    <string name="hint_2"> Введите 2 число</string>
+
+    <!-- Выпадающее меню светлая/темная тема в настройках -->
+    <string-array name="theme_mode_items">
+        <item>Светлая</item>
+        <item>Тёмная</item>
+    </string-array>
+
+    <!-- Выпадающее меню с темами в настройках -->
+    <string-array name="theme_items">
+        <item>Стандартная</item>
+        <item>Мятная</item>
+        <item>Морская</item>
+        <item>Городская</item>
+        <item>эээээ...?</item>
+    </string-array>
+
+</resources>

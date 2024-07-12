@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Стандартная светлая+темная тема -->
+    <color name="black">#FF000000</color>
+    <color name="darkest_gray">#373737</color>
+    <color name="darker_gray">#5E5E5E</color>
+    <color name="light_gray">#CDCDCD</color>
+    <color name="lighter_gray">#B1B0B0</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="orange">#FF7100</color>
+
+    <!-- Зеленая тема -->
+    <color name="very_lighter_green"> #F1F7EE </color>
+    <color name="lighter_green"> #E0EDC5 </color>
+    <color name="light_green">#B0BEA9</color>
+    <color name="green"> #93B281</color>
+
+    <!-- Синяя тема -->
+    <color name="very_lighter_blue"> #eaeaea </color>
+    <color name="lighter_blue"> #8ba0a4 </color>
+    <color name="blue"> #1b4552</color>
+    <color name="red">#d74a49 </color>
+
+    <!-- Городская тема -->
+    <color name="light_yellow">#e8d8c9</color>
+    <color name="dark_orange"> #ab5852</color>
+    <color name="middle_green"> #838469</color>
+    <color name="sea_green">#476066 </color>
+</resources>

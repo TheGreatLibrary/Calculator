@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Хранятся мои кастомные атрибуты для тем и стилей кнопок-->
+    <declare-styleable name="CustomAttributes">
+        <attr name="ColorSignButton" format="color"/>
+        <attr name="ColorNumberButton" format="color"/>
+        <attr name="ColorEqualsButton" format="color"/>
+        <attr name="ColorTextButton" format="color"/>
+    </declare-styleable>
+</resources>

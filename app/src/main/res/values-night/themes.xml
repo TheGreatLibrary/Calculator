@@ -1,0 +1,47 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Calculator" parent="Theme.Material3.DayNight">
+        <item name="android:textColor"> @color/white </item>
+        <item name="android:colorBackground">@color/black</item>
+        <item name="backgroundColor"> @color/black</item>
+        <item name="background"> @color/black</item>
+        <item name="android:statusBarColor">@color/black</item>
+
+        <item name="ColorEqualsButton"> @color/green </item>
+        <item name="ColorNumberButton"> @color/light_green </item>
+        <item name="ColorSignButton"> @color/lighter_green </item>
+
+        <item name="android:navigationBarColor"> @color/black</item>
+    </style>
+
+    <style name="Base.Theme.Calculator.Green" parent="Theme.Material3.DayNight">
+        <item name="android:colorBackground"> @color/very_lighter_green</item>
+        <item name="android:statusBarColor">@color/very_lighter_green</item>
+        <item name="ColorEqualsButton"> @color/green </item>
+        <item name="ColorNumberButton"> @color/light_green </item>
+        <item name="ColorSignButton"> @color/lighter_green </item>
+
+        <item name="android:navigationBarColor">@color/light_gray</item>
+    </style>
+
+    <style name="Base.Theme.Calculator.Blue" parent="Theme.Material3.DayNight">
+        <item name="android:colorBackground"> @color/very_lighter_blue</item>
+        <item name="android:statusBarColor">@color/very_lighter_blue</item>
+        <item name="ColorEqualsButton"> @color/red </item>
+        <item name="ColorNumberButton"> @color/blue </item>
+        <item name="ColorSignButton"> @color/lighter_blue </item>
+
+        <item name="android:navigationBarColor">@color/very_lighter_blue</item>
+
+    </style>
+
+    <style name="Base.Theme.Calculator.Town" parent="Theme.Material3.DayNight">
+        <item name="android:colorBackground">@color/light_yellow</item>
+        <item name="android:statusBarColor">@color/light_yellow</item>
+        <item name="ColorEqualsButton"> @color/dark_orange </item>
+        <item name="ColorNumberButton"> @color/sea_green </item>
+        <item name="ColorSignButton"> @color/middle_green </item>
+
+        <item name="android:navigationBarColor">@color/light_yellow</item>
+    </style>
+</resources>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Стили текстовых полей -->
+    <style name="TextViewStyle">
+        <item name="android:layout_width"> 0dp</item>
+        <item name="android:layout_height">wrap_content </item>
+
+        <item name="android:text"> "" </item>
+        <item name="android:maxLines"> 1 </item>
+        <item name="android:textSize">@dimen/text_size</item>
+
+        <item name="android:layout_marginBottom"> @dimen/margin_bottom_view </item>
+        <item name="layout_constraintWidth_percent">0.9</item>
+
+        <item name="layout_constraintBottom_toTopOf">@id/grid</item>
+        <item name="layout_constraintStart_toStartOf"> parent </item>
+    </style>
+
+    <style name="TextBox" parent="TextViewStyle">
+        <item name="layout_constraintEnd_toStartOf"> @id/menuButton</item>
+        <item name="layout_constraintBottom_toTopOf">@id/textView</item>
+
+        <item name="android:textSize">@dimen/textBox_text_size</item>
+
+        <item name="layout_constraintWidth_percent">0.8</item>
+    </style>
+
+    <style name="ButtonImagePoints" parent="BasedImageStyle">
+        <item name="android:layout_width">@dimen/image_width</item>
+        <item name="android:layout_height">@dimen/image_height</item>
+        <item name="android:scaleType">centerCrop</item>
+
+        <item name="layout_constraintStart_toEndOf">@id/textBox</item>
+        <item name="layout_constraintEnd_toEndOf"> parent</item>
+        <item name="layout_constraintTop_toTopOf">@id/textBox</item>
+        <item name="layout_constraintBottom_toBottomOf">@id/textBox</item>
+    </style>
+</resources>

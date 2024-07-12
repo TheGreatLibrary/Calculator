@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Настройки стиля button -->
+    <dimen name="button_height">63dp</dimen>
+    <dimen name="btn_bottom_margin"> 5dp </dimen>
+    <dimen name="button_width_percent"> 0.18 </dimen>
+
+    <!-- Настройки экрана -->
+    <dimen name="margin_vertical"> 10dp</dimen>
+
+    <!-- Настройки textView -->
+    <dimen name="text_size">25sp</dimen>
+    <dimen name="margin_bottom_view"> 15dp</dimen>
+    <dimen name="textView_width_percent"> 0.88</dimen>
+
+    <!-- Настройки textBox -->
+    <dimen name="textBox_text_size">35sp</dimen>
+</resources>
