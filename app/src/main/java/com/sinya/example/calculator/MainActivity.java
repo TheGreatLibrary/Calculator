@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.PopupMenu;
 import android.widget.Button;
@@ -18,28 +17,37 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
-import java.io.FileWriter;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Set;
 
 public class MainActivity extends AppCompatActivity {
     private static final String PREF_THEME = "pref_theme"; // переменная для хранения гаммы приложения
     private static final String THEME_MODE = "theme_mode"; // переменная для хранения дневной/темной темы
-    private TextView textView; // основное поле для ввода текста
+      private TextView textView; // основное поле для ввода текста
+
+    private static int a = 1;
     private TextView example; // поле для ответа
     private boolean comma = true; // если true - можно ставить запятую, иначе нельзя
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         int themeModeId = getIdTheme(THEME_MODE), themeId = getIdTheme(PREF_THEME);
-        applyThemeMode(themeModeId);
         applyTheme(themeId);
+        applyThemeMode(themeModeId);
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
+        if (themeModeId == a) {
+            a = 0;
+            recreate();
+        }
+
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
+
+
 
         textView = findViewById(R.id.textBox);
         textView.setMovementMethod(new ScrollingMovementMethod());
@@ -56,7 +64,15 @@ public class MainActivity extends AppCompatActivity {
                 showPopupMenu(v);
             }
         });
+
     }
+
+    public void saveThemePreference(Context context, int selectedTheme, String pref_name) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences(pref_name, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt(pref_name, selectedTheme);
+        editor.apply();
+    } // Метод для сохранения данных
     private int getIdTheme(String pref_name) {
         SharedPreferences preferences = getSharedPreferences(pref_name, MODE_PRIVATE);
         return preferences.getInt(pref_name, 0);
@@ -70,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
                 break;
         }
+       // saveThemePreference(getApplicationContext(), theme, LAST_THEME_MODE);
     } // выбор светлой/темной темы
     private void applyTheme(int theme) {
         switch (theme) {
@@ -86,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
                 setTheme(R.style.Base_Theme_Calculator_Town);
                 break;
         }
+      //  saveThemePreference(getApplicationContext(), theme, LAST_THEME);
     } // выбор темы приложения
     private void showPopupMenu(View view) {
         PopupMenu popupMenu = new PopupMenu(this, view);
@@ -108,15 +126,13 @@ public class MainActivity extends AppCompatActivity {
 
 
     /// работа с историей...
-    private void saveExample(String example) {
-        try(FileWriter writer = new FileWriter("saved_examples.txt", false))
-        {
-            writer.write(example);
-            writer.flush();
-            Toast.makeText(getApplicationContext(), "Запись произошла", Toast.LENGTH_SHORT).show();
-        }
-        catch(IOException ex){
-            Toast.makeText(getApplicationContext(), ex.toString(), Toast.LENGTH_SHORT).show();
+    private void writeToFile(String example, Context context) {
+        try {
+            FileOutputStream writer = context.openFileOutput("saved_examples.txt", Context.MODE_APPEND | Context.MODE_PRIVATE);
+            writer.write((example+"\n").getBytes());
+            writer.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     } // записывает в текстовый файл информацию
     public void Example_Click(View v) {
@@ -339,7 +355,7 @@ public class MainActivity extends AppCompatActivity {
         while (arr.contains("(")) CalculationWithBrackets(arr, InBrackets(arr)); // производятся действия со скобками
         textView.setText(Calculation(arr)); // ответ в текстбокс
 
-        saveExample(example.getText()+"=" +textView.getText());
+        writeToFile(example.getText()+"=" +textView.getText(), this);
     }
     private String Calculation(ArrayList<String> arr) {
         while (arr.size() != 1)

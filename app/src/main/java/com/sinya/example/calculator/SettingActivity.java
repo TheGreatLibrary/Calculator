@@ -38,6 +38,8 @@ public class SettingActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
 
+
+
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_setting);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {

@@ -6,5 +6,8 @@
         <attr name="ColorNumberButton" format="color"/>
         <attr name="ColorEqualsButton" format="color"/>
         <attr name="ColorTextButton" format="color"/>
+        <attr name="ColorBackGroundApp" format="color"/>
+        <attr name="ColorItemHistory" format="color"/>
+        <attr name="ColorTextElements" format="color"/>
     </declare-styleable>
 </resources>

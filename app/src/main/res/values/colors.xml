@@ -10,20 +10,31 @@
     <color name="orange">#FF7100</color>
 
     <!-- Зеленая тема -->
-    <color name="very_lighter_green"> #F1F7EE </color>
-    <color name="lighter_green"> #E0EDC5 </color>
+    <color name="darkest_green">#3C4239</color>
+    <color name="darker_green">#657E59</color>
+    <color name="dark_green">#99A582</color>
+    <color name="green_dv">#687A5E</color>
+    <color name="green_lv"> #93B281</color>
     <color name="light_green">#B0BEA9</color>
-    <color name="green"> #93B281</color>
+    <color name="lighter_green"> #E0EDC5 </color>
+    <color name="very_lighter_green"> #F1F7EE </color>
 
     <!-- Синяя тема -->
-    <color name="very_lighter_blue"> #eaeaea </color>
-    <color name="lighter_blue"> #8ba0a4 </color>
+    <color name="darkest_blue">#19343C</color>
+    <color name="darker_blue">#3A565C</color>
+    <color name="dark_blue">#84A0A8</color>
     <color name="blue"> #1b4552</color>
+    <color name="lighter_blue"> #8ba0a4 </color>
+    <color name="very_lighter_blue"> #eaeaea </color>
     <color name="red">#d74a49 </color>
 
     <!-- Городская тема -->
-    <color name="light_yellow">#e8d8c9</color>
+    <color name="darkest_brown">#494040</color>
+    <color name="light_brown">#e8d8c9</color>
+    <color name="light_green_yellow">#84846A</color>
+    <color name="dark_green_yellow"> #838469</color>
+    <color name="sea_green_dv">#3F5C50</color>
+    <color name="sea_green_lv">#486064 </color>
+    <color name="darker_orange">#AC5750</color>
     <color name="dark_orange"> #ab5852</color>
-    <color name="middle_green"> #838469</color>
-    <color name="sea_green">#476066 </color>
 </resources>

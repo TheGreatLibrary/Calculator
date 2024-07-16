@@ -1,42 +1,60 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.Calculator" parent="Theme.Material3.DayNight">
+    <style name="Base.Theme.Calculator" parent="Theme.Material3.Light">
         <item name="android:colorBackground"> @color/light_gray</item>
         <item name="android:statusBarColor">@color/light_gray</item>
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryVariant">@color/black</item>
+        <item name="colorSecondary">@color/black</item>
+        <item name="colorSurface">@color/black</item>
         <item name="ColorEqualsButton"> @color/orange </item>
         <item name="ColorNumberButton"> @color/white </item>
         <item name="ColorSignButton"> @color/lighter_gray </item>
+        <item name="ColorBackGroundApp"> @color/light_gray </item>
+        <item name="ColorItemHistory">@color/darker_gray</item>
+        <item name="ColorTextElements"> @color/black </item>
 
         <item name="android:navigationBarColor">@color/light_gray</item>
     </style>
 
-    <style name="Base.Theme.Calculator.Green" parent="Theme.Material3.DayNight">
+    <style name="Base.Theme.Calculator.Green" parent="Theme.Material3.Light">
         <item name="android:colorBackground"> @color/very_lighter_green</item>
         <item name="android:statusBarColor">@color/very_lighter_green</item>
-        <item name="ColorEqualsButton"> @color/green </item>
+
+        <item name="ColorEqualsButton"> @color/green_lv </item>
         <item name="ColorNumberButton"> @color/light_green </item>
         <item name="ColorSignButton"> @color/lighter_green </item>
+        <item name="ColorBackGroundApp"> @color/very_lighter_green </item>
+        <item name="ColorItemHistory">@color/darker_gray</item>
+        <item name="ColorTextElements">@color/darkest_gray</item>
         
-        <item name="android:navigationBarColor">@color/light_gray</item>
+        <item name="android:navigationBarColor"> @color/light_green</item>
     </style>
 
-    <style name="Base.Theme.Calculator.Blue" parent="Theme.Material3.DayNight">
+    <style name="Base.Theme.Calculator.Blue" parent="Theme.Material3.Light">
         <item name="android:colorBackground"> @color/very_lighter_blue</item>
         <item name="android:statusBarColor">@color/very_lighter_blue</item>
+
         <item name="ColorEqualsButton"> @color/red </item>
         <item name="ColorNumberButton"> @color/blue </item>
         <item name="ColorSignButton"> @color/lighter_blue </item>
+        <item name="ColorBackGroundApp"> @color/very_lighter_blue </item>
+        <item name="ColorItemHistory">@color/darker_gray</item>
+        <item name="ColorTextElements"> @color/white </item>
 
-        <item name="android:navigationBarColor">@color/very_lighter_blue</item>
+        <item name="android:navigationBarColor">@color/blue</item>
     </style>
 
-    <style name="Base.Theme.Calculator.Town" parent="Theme.Material3.DayNight">
-        <item name="android:colorBackground">@color/light_yellow</item>
-        <item name="android:statusBarColor">@color/light_yellow</item>
+    <style name="Base.Theme.Calculator.Town" parent="Theme.Material3.Light">
+        <item name="android:colorBackground">@color/light_brown</item>
+        <item name="android:statusBarColor">@color/light_brown</item>
         <item name="ColorEqualsButton"> @color/dark_orange </item>
-        <item name="ColorNumberButton"> @color/sea_green </item>
-        <item name="ColorSignButton"> @color/middle_green </item>
+        <item name="ColorNumberButton"> @color/sea_green_lv </item>
+        <item name="ColorSignButton"> @color/light_green_yellow </item>
+        <item name="ColorBackGroundApp"> @color/light_brown </item>
+        <item name="ColorItemHistory">@color/darker_gray</item>
+        <item name="ColorTextElements">@color/white</item>
 
-        <item name="android:navigationBarColor">@color/light_yellow</item>
+        <item name="android:navigationBarColor">@color/sea_green_lv</item>
     </style>
 </resources>
