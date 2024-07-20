@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     interface OnStateClickListener {
-        void onStateClick(int position);
+        void onStateClick(int position, String example);
     } // интерфейс для выполнения клика по ячейке истории
 
     private ArrayList<String> data;
@@ -33,13 +33,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     }
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        String[] element = data.get(position).split("==");
+        String[] element = data.get(position).split("=");
         holder.textExample.setText(element[0]);
         holder.textAnswer.setText(element[1]);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                onStateClickListener.onStateClick(position);
+                onStateClickListener.onStateClick(position, holder.textExample.getText().toString());
             }
         });
     }
@@ -50,8 +50,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView textExample;
-        public TextView textAnswer;
+        public TextView textExample; // пример
+        public TextView textAnswer; // ответ
 
         public ViewHolder(View view) {
             super(view);

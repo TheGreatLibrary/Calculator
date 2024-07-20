@@ -17,15 +17,31 @@
         android:layout_gravity="right"
         tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
-    <TextView
+    <EditText
         android:id="@+id/textBox"
         style="@style/TextBox"
-        tools:ignore="MissingConstraints" />
+        android:singleLine="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:background="@android:color/transparent"
+        android:scrollHorizontally="true"
+        android:ellipsize="end"
+        android:gravity="end"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
+    <EditText
         android:id="@+id/textView"
         style="@style/TextViewStyle"
+        android:singleLine="true"
+        android:background="@android:color/transparent"
+        android:scrollHorizontally="true"
+        android:ellipsize="end"
+        android:gravity="end"
+        android:onClick="Example_Click"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -17,16 +17,34 @@
         android:layout_gravity="right"
         tools:ignore="ContentDescription,MissingConstraints" />
 
-    <TextView
+    <EditText
         android:id="@+id/textBox"
         style="@style/TextBox"
-        tools:ignore="MissingConstraints" />
+        android:singleLine="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:background="@android:color/transparent"
+        android:scrollHorizontally="true"
+        android:ellipsize="end"
+        android:gravity="end"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
+    <EditText
         android:id="@+id/textView"
         style="@style/TextViewStyle"
+        android:singleLine="true"
+        android:background="@android:color/transparent"
+        android:scrollHorizontally="true"
+        android:ellipsize="end"
+        android:gravity="end"
+        android:onClick="Example_Click"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
+
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/grid"
@@ -59,6 +77,7 @@
         <Button
             android:id="@+id/powSign"
             style="@style/ButtonSingLight"
+            android:onClick="Pow_Click"
             android:text="^"
             app:layout_constraintEnd_toStartOf="@id/sqrtSign"
             app:layout_constraintStart_toEndOf="@id/closeBr"
@@ -67,6 +86,7 @@
         <Button
             android:id="@+id/sqrtSign"
             style="@style/ButtonSingLight"
+            android:onClick="Sqrt_Click"
             android:text="√"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/powSign"

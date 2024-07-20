@@ -9,19 +9,19 @@
         android:id="@+id/item_example"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/green_lv"
+        android:background="?attr/ColorSignButton"
         android:padding="5dp"
         android:textStyle="bold"
-        android:textColor="@color/black"
-        android:textSize="18sp" />
+        android:textColor="?attr/ColorTextElements"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/item_answer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/green_lv"
+        android:background="?attr/ColorSignButton"
         android:padding="5dp"
-        android:textColor="@color/black"
+        android:textColor="?attr/ColorTextElements"
         android:textStyle="bold"
-        android:textSize="22sp" />
+        android:textSize="24sp" />
 </LinearLayout>

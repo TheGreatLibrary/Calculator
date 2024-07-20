@@ -2,6 +2,7 @@ package com.sinya.example.calculator;
 
 import android.adservices.common.AdData;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -55,8 +56,11 @@ public class HistoryActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         MyAdapter myAdapter = new MyAdapter(readFromFile(this), new MyAdapter.OnStateClickListener() {
             @Override
-            public void onStateClick(int position) {
-                Toast.makeText(getApplicationContext(), "Был выбран пункт "+ position, Toast.LENGTH_SHORT).show();
+            public void onStateClick(int position, String example) {
+                Intent intent = new Intent(HistoryActivity.this, MainActivity.class);
+                intent.putExtra("text_key", example);
+                startActivity(intent);
+                //Toast.makeText(getApplicationContext(), "Был выбран пункт "+ position, Toast.LENGTH_SHORT).show();
             }});
         recyclerView.setAdapter(myAdapter);
     }
@@ -78,6 +82,7 @@ public class HistoryActivity extends AppCompatActivity {
         return data;
     }
 
+    /// Установка сохраненной темы
     private int getIdTheme(String pref_name) {
         SharedPreferences preferences = getSharedPreferences(pref_name, MODE_PRIVATE);
         return preferences.getInt(pref_name, 0);
