@@ -7,7 +7,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.content.SharedPreferences;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.ActionBar;
@@ -16,16 +15,11 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-
-import java.util.ArrayList;
-import java.util.Objects;
-
 public class SettingActivity extends AppCompatActivity {
     private static final String PREF_THEME = "pref_theme"; // переменная для хранения гаммы приложения
     private static final String THEME_MODE = "theme_mode"; // переменная для хранения дневной/темной темы
-    private Spinner spinnerMode;
-    private Spinner spinnerTheme;
-
+    private Spinner spinnerMode; // выпадающее меню для выбора дневной/ночной темы
+    private Spinner spinnerTheme; // выпадающее меню для гаммы приложения
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         int themeModeId = getIdTheme(THEME_MODE), themeId = getIdTheme(PREF_THEME);
@@ -37,9 +31,6 @@ public class SettingActivity extends AppCompatActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
 
         super.onCreate(savedInstanceState);
-
-
-
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_setting);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -53,7 +44,6 @@ public class SettingActivity extends AppCompatActivity {
         adapterMode.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerMode.setAdapter(adapterMode);
         spinnerMode.setSelection(themeModeId);
-
         spinnerMode.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -74,7 +64,6 @@ public class SettingActivity extends AppCompatActivity {
         adapterTheme.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerTheme.setAdapter(adapterTheme);
         spinnerTheme.setSelection(themeId);
-
         spinnerTheme.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -115,10 +104,10 @@ public class SettingActivity extends AppCompatActivity {
                 break; // зеленая тема
             case 2:
                 setTheme(R.style.Base_Theme_Calculator_Blue);
-                break;
+                break; // синяя тема
             case 3:
                 setTheme(R.style.Base_Theme_Calculator_Town);
-                break;
+                break; // городская тема
         }
     } // выбор темы приложения
     public void saveThemePreference(Context context, int selectedTheme, String pref_name) {

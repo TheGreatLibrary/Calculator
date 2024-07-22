@@ -9,5 +9,7 @@
         <attr name="ColorBackGroundApp" format="color"/>
         <attr name="ColorItemHistory" format="color"/>
         <attr name="ColorTextElements" format="color"/>
+
+        <attr name="StyleButtonClearHistory" format="reference"/>
     </declare-styleable>
 </resources>

@@ -13,6 +13,7 @@
         <item name="ColorBackGroundApp"> @color/light_gray </item>
         <item name="ColorItemHistory">@color/darker_gray</item>
         <item name="ColorTextElements"> @color/black </item>
+        <item name="StyleButtonClearHistory">@drawable/trash_black</item>
 
         <item name="android:navigationBarColor">@color/light_gray</item>
     </style>
@@ -27,7 +28,8 @@
         <item name="ColorBackGroundApp"> @color/very_lighter_green </item>
         <item name="ColorItemHistory">@color/darker_gray</item>
         <item name="ColorTextElements">@color/darkest_gray</item>
-        
+        <item name="StyleButtonClearHistory">@drawable/trash_white_green</item>
+
         <item name="android:navigationBarColor"> @color/light_green</item>
     </style>
 
@@ -41,6 +43,7 @@
         <item name="ColorBackGroundApp"> @color/very_lighter_blue </item>
         <item name="ColorItemHistory">@color/darker_gray</item>
         <item name="ColorTextElements"> @color/white </item>
+        <item name="StyleButtonClearHistory">@drawable/trash_white_blue</item>
 
         <item name="android:navigationBarColor">@color/blue</item>
     </style>
@@ -54,6 +57,7 @@
         <item name="ColorBackGroundApp"> @color/light_brown </item>
         <item name="ColorItemHistory">@color/darker_gray</item>
         <item name="ColorTextElements">@color/white</item>
+        <item name="StyleButtonClearHistory">@drawable/trash_white_town</item>
 
         <item name="android:navigationBarColor">@color/sea_green_lv</item>
     </style>
