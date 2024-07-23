@@ -467,27 +467,31 @@ public class MainActivity extends AppCompatActivity {
         if (arr.size()>i+2 && arr.get(i+2).equals("%")) {
             arr.set(i, String.valueOf(sqrt(Double.parseDouble(arr.get(i+1)))/100));
             RemoveRange(arr, i+1, 2);
-        }
+        } // √10%
         else {
             arr.set(i, String.valueOf(sqrt(Double.parseDouble(arr.get(i+1)))));
             RemoveRange(arr, i+1, 1);
-        }
+        } // √10
     } // вычисление корня
     private void Pow(ArrayList<String> arr, int i) {
         if (arr.size()>i+2 && arr.get(i+2).equals("%")) {
             arr.set(i+1, String.valueOf(Double.parseDouble(arr.get(i+1))/100));
             arr.set(i-1, String.valueOf(pow(Double.parseDouble(arr.get(i-1)), Double.parseDouble(arr.get(i+1)))));
             RemoveRange(arr, i, 3);
-        }
+        } // 10^10%
         else if (arr.size()>i+1 && arr.get(i+1).equals("√")) {
             Sqrt(arr, i+1); // вычислит корень числа
             arr.set(i-1, String.valueOf(pow(Double.parseDouble(arr.get(i-1)), Double.parseDouble(arr.get(i+1)))));
             RemoveRange(arr, i, 2);
-        }
+        } // 10^√10
+        else if (arr.get(i-1).equals("%")) {
+            arr.set(i-2, String.valueOf(pow(Double.parseDouble(arr.get(i-2))/100, Double.parseDouble(arr.get(i+1)))));
+            RemoveRange(arr, i-1, 3);
+        } // 10%^3
         else {
             arr.set(i-1, String.valueOf(pow(Double.parseDouble(arr.get(i-1)), Double.parseDouble(arr.get(i+1)))));
             RemoveRange(arr, i, 2);
-        }
+        } // 10^2
     } // вычисление степени
     private void MultyDivide(ArrayList<String> arr) {
         for (int i = 0; i < arr.size(); i++) {
@@ -505,37 +509,37 @@ public class MainActivity extends AppCompatActivity {
         if ((arr.get(i - 1).equals("%")) && (arr.size() - i - 2 > 0 && arr.get(i+2).equals("%"))) {
             arr.set(i-2, String.valueOf(Double.parseDouble(arr.get(i-2))/Double.parseDouble(arr.get(i+1))));
             RemoveRange(arr, i - 1, 4);
-        }
+        } // 12%/12%
         else if (arr.get(i - 1).equals("%")) {
             arr.set(i-2, String.valueOf(Double.parseDouble(arr.get(i-2))/Double.parseDouble(arr.get(i+1))/100));
             RemoveRange(arr, i - 1, 3);
-        }
+        } // 12%/2
         else if (arr.size() - i - 2 > 0 && arr.get(i+2).equals("%")) {
             arr.set(i-1, String.valueOf(Double.parseDouble(arr.get(i-1))/Double.parseDouble(arr.get(i+1))*100));
             RemoveRange(arr, i, 3);
-        }
+        } // 12/12%
         else {
             arr.set(i-1, String.valueOf(Double.parseDouble(arr.get(i-1))/Double.parseDouble(arr.get(i+1))));
             RemoveRange(arr, i, 2);
-        }
+        } // 12/12
     } // вычисление деления
     private void Multiply(ArrayList<String> arr, int i) {
         if ((arr.get(i - 1).equals("%")) && (arr.size() - i - 2 > 0 && arr.get(i + 2).equals("%"))) {
             arr.set(i-2, String.valueOf(Double.parseDouble(arr.get(i-2))*Double.parseDouble(arr.get(i+1))/10000));
             RemoveRange(arr, i - 1, 4);
-        }
+        } // 12%*12%
         else if (arr.get(i - 1).equals("%")) {
             arr.set(i-2, String.valueOf(Double.parseDouble(arr.get(i-2))*Double.parseDouble(arr.get(i+1))/100));
             RemoveRange(arr, i - 1, 3);
-        }
+        } // 12%*5
         else if (arr.size() - i - 2 > 0 && arr.get(i+2).equals("%")) {
             arr.set(i-1, String.valueOf(Double.parseDouble(arr.get(i-1))*Double.parseDouble(arr.get(i+1))/100));
             RemoveRange(arr, i, 3);
-        }
+        } // 5*12%
         else {
             arr.set(i-1, String.valueOf(Double.parseDouble(arr.get(i-1))*Double.parseDouble(arr.get(i+1))));
             RemoveRange(arr, i, 2);
-        }
+        }  // 5*5
     } // вычисление умножения
     private void Percent(ArrayList<String> arr) {
         for (int i = 0; i < arr.size(); i++) {
@@ -564,21 +568,21 @@ public class MainActivity extends AppCompatActivity {
         if (i + 2 < arr.size() && arr.get(i + 2).equals("%")) {
             arr.set(i - 1, String.valueOf(Double.parseDouble(arr.get(i - 1)) * (1 + Double.parseDouble(arr.get(i + 1)) / 100)));
             RemoveRange(arr, i, 3);
-        }
+        } // 2+5%
         else {
             arr.set(i - 1, String.valueOf(Double.parseDouble(arr.get(i - 1)) + Double.parseDouble(arr.get(i + 1))));
             RemoveRange(arr, i, 2);
-        }
+        } // 2+5
     } // вычисление сложения
     private void Subtraction(ArrayList<String> arr, int i) {
         if (i + 2 < arr.size() && arr.get(i + 2).equals("%")) {
             arr.set(i - 1, String.valueOf(Double.parseDouble(arr.get(i - 1)) * (1 - Double.parseDouble(arr.get(i + 1)) / 100)));
             RemoveRange(arr, i, 3);
-        }
+        } // 12-10%
         else {
             arr.set(i - 1, String.valueOf(Double.parseDouble(arr.get(i - 1)) - Double.parseDouble(arr.get(i + 1))));
             RemoveRange(arr, i, 2);
-        }
+        } // 12-10
     } // вычисление вычитания
 
 
