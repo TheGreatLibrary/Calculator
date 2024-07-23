@@ -11,6 +11,7 @@
         <item name="ColorItemHistory">@color/lighter_gray</item>
         <item name="ColorTextElements">@color/white</item>
         <item name="StyleButtonClearHistory">@drawable/trash_white</item>
+        <item name="StyleButtonBackspace">@drawable/delete_white</item>
 
         <item name="android:navigationBarColor">@color/black</item>
     </style>
@@ -26,6 +27,7 @@
         <item name="ColorItemHistory">@color/darker_gray</item>
         <item name="ColorTextElements">@color/very_lighter_green</item>
         <item name="StyleButtonClearHistory">@drawable/trash_black_green</item>
+        <item name="StyleButtonBackspace">@drawable/delete_green</item>
 
         <item name="android:navigationBarColor"> @color/darker_green</item>
     </style>
@@ -41,6 +43,7 @@
         <item name="ColorItemHistory">@color/darker_gray</item>
         <item name="ColorTextElements">@color/white</item>
         <item name="StyleButtonClearHistory">@drawable/trash_black_blue</item>
+        <item name="StyleButtonBackspace">@drawable/delete_white</item>
 
         <item name="android:navigationBarColor">@color/darker_blue</item>
     </style>
@@ -56,6 +59,7 @@
         <item name="ColorItemHistory">@color/darker_gray</item>
         <item name="ColorTextElements">@color/white</item>
         <item name="StyleButtonClearHistory">@drawable/trash_black_town</item>
+        <item name="StyleButtonBackspace">@drawable/delete_white</item>
 
         <item name="android:navigationBarColor">@color/sea_green_dv</item>
     </style>

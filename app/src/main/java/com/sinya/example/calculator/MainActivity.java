@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String PREF_THEME = "pref_theme"; // переменная для хранения гаммы приложения
     private static final String THEME_MODE = "theme_mode"; // переменная для хранения дневной/темной темы
     private static int nightModeId = 1; // переменная для подрузки ночной темы
+    private static int lightModeId = 0; // переменная для подгрузки светлой темы
     private boolean comma = true; // если true - можно ставить запятую, иначе нельзя
     private EditText exampleAndAnswer; // сюда набирается текст, здесь же будет выведен ответ
     private EditText example; // сюда выводится пример исполненной программы
@@ -45,10 +46,13 @@ public class MainActivity extends AppCompatActivity {
         actionBar.hide(); // скрывает actionBar в приложении
 
         if (themeModeId == nightModeId) {
-            nightModeId = 0; // меняет значение, чтобы устранить бесконечный цикл (костыльно, но это лучшее, что можно сделать так коротко и просто)
+            nightModeId = -10; // меняет значение, чтобы устранить бесконечный цикл (костыльно, но это лучшее, что можно сделать так коротко и просто)
             recreate(); // перезагружает layout для прогрузки
         } // срабатывает только тогда, когда установлена ночная тема перед первым запуском приложения, в дальнейшем перезагрузка не требуется
-
+        else if (themeModeId == lightModeId) {
+            lightModeId = 10; // меняет значение, чтобы устранить бесконечный цикл (костыльно, но это лучшее, что можно сделать так коротко и просто)
+            recreate(); // перезагружает layout для прогрузки
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -110,12 +114,7 @@ public class MainActivity extends AppCompatActivity {
         outState.putString("textview_text", exampleAndAnswer.getText().toString());
         outState.putString("example_text", example.getText().toString());
     } // сохраняет данные перед смертью слоя
-    @Override
-    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-        setText(savedInstanceState.getString("textview_text"));
-        example.setText(savedInstanceState.getString("example_text"));
-    } // загружает данные при загрузке слоя
+
     @Override
     protected void onPause() {
         super.onPause();
@@ -164,7 +163,6 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case 1:
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                break;
         }
     } // выставляет светлую/темную тему
     private void applyTheme(int theme) {
@@ -334,9 +332,10 @@ public class MainActivity extends AppCompatActivity {
 
         if (btn.equals("C")) {
             exampleAndAnswer.setText("");
+            example.setText("");
             comma = true;
         } // полное стирание
-        else if (btn.equals("D") && CaretInd() > 0)
+        else if (v.getId() == R.id.deleteOnce && CaretInd() > 0)
         {
             if (Found(",", 1)) comma = true;
             SubText(1);
@@ -344,6 +343,7 @@ public class MainActivity extends AppCompatActivity {
     } // знаки С и D
     public void Equals_Click(View v) {
         try {
+            exampleAndAnswer.setSelection(exampleAndAnswer.length()); // устанавливаем каретку в конец для простой проверки в условии
             if (!Found("/-+*(√^", 1)) {
                 while (CanPutBracket()) exampleAndAnswer.append(")");
                 String num = ""; // строка для построения чисел
@@ -406,7 +406,7 @@ public class MainActivity extends AppCompatActivity {
             } // ищем все строки с числами, где есть Е, чтобы конвертировать их число(строку) нужного формата
         }
         while (arr.contains("(")) CalculationWithBrackets(arr, InBrackets(arr)); // производятся действия со скобками
-        exampleAndAnswer.setText(Calculation(arr)); // ответ в текстбокс
+        exampleAndAnswer.setText(ConvertAnswer(Calculation(arr))); // ответ в текстбокс
         exampleAndAnswer.setSelection(exampleAndAnswer.length());
 
         writeToFile(example.getText()+"="+ exampleAndAnswer.getText(), this); // записывает данные с выполненного примера в файл
@@ -421,6 +421,7 @@ public class MainActivity extends AppCompatActivity {
         }
         return arr.get(0);
     } // производит операции по вычислению всех действий в примере
+
 
     /**
      * Выполняется действие в скобках. Находятся индексы ( и ). Затем копируется список между скобками.
@@ -641,4 +642,11 @@ public class MainActivity extends AppCompatActivity {
     private int CaretInd() {
         return exampleAndAnswer.getSelectionStart();
     } // короткий метод для получения индекса каретки
+    private String ConvertAnswer(String answer) {
+        if (answer.contains("Infinity")) return "∞";
+        double number = Double.parseDouble(answer);
+        if (!answer.contains("E") && number%1==0) return String.valueOf((int)number);
+        else return answer.replace('.', ',');
+    } // если число целочисленное, то убирает .0 в конце, а если вещественное, то заменяет . на ,
+
 }

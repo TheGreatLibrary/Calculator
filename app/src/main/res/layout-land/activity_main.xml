@@ -22,7 +22,10 @@
         style="@style/TextBox"
         android:singleLine="true"
         android:focusable="true"
+        android:inputType="textNoSuggestions"
         android:focusableInTouchMode="true"
+        android:textIsSelectable="false"
+        android:longClickable="false"
         android:background="@android:color/transparent"
         android:scrollHorizontally="true"
         android:ellipsize="end"
@@ -65,9 +68,9 @@
 
         <Button
             android:id="@+id/deleteOnce"
-            style="@style/ButtonSingLight"
+            style="@style/ButtonDeleteOnce"
             android:onClick="Delete_Click"
-            android:text="D"
+            app:icon="?attr/StyleButtonBackspace"
             app:layout_constraintEnd_toStartOf="@+id/doubleZero"
             app:layout_constraintStart_toEndOf="@id/deleteAll"
             app:layout_constraintTop_toTopOf="parent" />

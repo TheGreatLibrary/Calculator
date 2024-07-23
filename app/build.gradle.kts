@@ -10,8 +10,9 @@ android {
         applicationId = "com.sinya.example.calculator"
         minSdk = 26
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 3
+        versionName = "1.0.2"
+        resValue("string", "app_name", "Калькулятор")
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

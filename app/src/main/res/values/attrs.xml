@@ -11,5 +11,6 @@
         <attr name="ColorTextElements" format="color"/>
 
         <attr name="StyleButtonClearHistory" format="reference"/>
+        <attr name="StyleButtonBackspace" format="reference"/>
     </declare-styleable>
 </resources>

@@ -11,4 +11,12 @@
         <item name="layout_constraintEnd_toEndOf"> parent</item>
         <item name="layout_constraintTop_toTopOf"> parent</item>
     </style>
+
+    <style name="ButtonDeleteOnce" parent="ButtonStyle">
+        <item name="iconTint">?attr/ColorTextElements</item>
+        <item name="android:backgroundTint">?attr/ColorSignButton</item>
+        <item name="iconGravity"> textStart</item>
+        <item name="android:gravity"> center</item>
+        <item name="iconSize">@dimen/backspace_btn_size</item>
+    </style>
 </resources>

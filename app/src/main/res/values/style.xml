@@ -20,6 +20,14 @@
         <item name="android:backgroundTint">?attr/ColorSignButton</item>
     </style>
 
+    <style name="ButtonDeleteOnce" parent="ButtonStyle">
+        <item name="iconTint">?attr/ColorTextElements</item>
+        <item name="android:backgroundTint">?attr/ColorSignButton</item>
+        <item name="iconGravity"> textStart</item>
+        <item name="android:gravity"> center</item>
+        <item name="iconSize">@dimen/backspace_btn_size</item>
+    </style>
+
     <style name="ButtonEqualsLight" parent="ButtonStyle">
         <item name="android:textColor">@color/white</item>
         <item name="android:backgroundTint">?attr/ColorEqualsButton</item>
@@ -63,5 +71,25 @@
 
         <item name="layout_constraintEnd_toEndOf"> parent</item>
         <item name="layout_constraintTop_toTopOf"> parent</item>
+    </style>
+
+    <!-- Кастомная тема для AlertDialog -->
+    <style name="CustomAlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="buttonBarPositiveButtonStyle">@style/PositiveButton</item>
+        <item name="buttonBarNegativeButtonStyle">@style/NegativeButton</item>
+        <item name="android:colorBackground">?attr/ColorSignButton</item>
+        <item name="android:textColorPrimary">?attr/ColorTextElements</item>
+    </style>
+
+    <!-- Стили для положительной и отрицательной кнопок -->
+    <style name="PositiveButton" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor"> ?attr/ColorEqualsButton</item>
+
+    </style>
+
+    <style name="NegativeButton" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">?attr/ColorTextElements</item>
     </style>
 </resources>

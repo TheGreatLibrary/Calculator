@@ -4,6 +4,7 @@
     <dimen name="button_height">63dp</dimen>
     <dimen name="btn_bottom_margin"> 5dp </dimen>
     <dimen name="button_width_percent"> 0.18 </dimen>
+    <dimen name="backspace_btn_size"> 30dp </dimen>
 
     <!-- Настройки экрана -->
     <dimen name="margin_vertical"> 10dp</dimen>

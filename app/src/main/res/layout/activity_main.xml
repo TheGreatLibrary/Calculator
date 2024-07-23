@@ -21,8 +21,8 @@
         android:id="@+id/textBox"
         style="@style/TextBox"
         android:singleLine="true"
-        android:focusableInTouchMode="true"
         android:textIsSelectable="false"
+        android:inputType="textNoSuggestions"
         android:longClickable="false"
         android:background="@android:color/transparent"
         android:scrollHorizontally="true"
@@ -114,12 +114,13 @@
 
         <Button
             android:id="@+id/deleteOnce"
-            style="@style/ButtonSingLight"
+            style="@style/ButtonDeleteOnce"
             android:onClick="Delete_Click"
-            android:text="D"
-            app:layout_constraintEnd_toStartOf="@id/divSign"
-            app:layout_constraintStart_toEndOf="@id/percent"
-            app:layout_constraintTop_toBottomOf="@+id/powSign" />
+            app:icon="?attr/StyleButtonBackspace"
+            app:layout_constraintStart_toStartOf="@id/divSign"
+            app:layout_constraintEnd_toEndOf="@id/percent"
+            app:layout_constraintTop_toBottomOf="@id/powSign"
+            />
 
         <Button
             android:id="@+id/divSign"

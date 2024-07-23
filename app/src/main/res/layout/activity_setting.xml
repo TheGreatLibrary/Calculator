@@ -18,17 +18,18 @@
         app:layout_constraintEnd_toStartOf="@+id/themeModeSpinner"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_percent="0.5" />
+        app:layout_constraintWidth_percent="0.3" />
 
     <Spinner
         android:id="@+id/themeModeSpinner"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="@+id/themeMode"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/themeMode"
         app:layout_constraintTop_toTopOf="@+id/themeMode"
-        app:layout_constraintWidth_percent="0.3"
+        app:layout_constraintWidth_percent="0.5"
         />
 
     <TextView
@@ -42,16 +43,17 @@
         app:layout_constraintEnd_toStartOf="@+id/themeSpinner"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/themeMode"
-        app:layout_constraintWidth_percent="0.5" />
+        app:layout_constraintWidth_percent="0.3" />
 
     <Spinner
         android:id="@+id/themeSpinner"
         android:layout_width="0dp"
+        android:textAlignment="center"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="@+id/theme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/theme"
         app:layout_constraintTop_toTopOf="@+id/theme"
-        app:layout_constraintWidth_percent="0.3" />
+        app:layout_constraintWidth_percent="0.5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

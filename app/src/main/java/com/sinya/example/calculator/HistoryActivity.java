@@ -84,7 +84,7 @@ public class HistoryActivity extends AppCompatActivity {
     } // метод нажатия на меню
 
     private void showDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(HistoryActivity.this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(HistoryActivity.this, R.style.CustomAlertDialogTheme);
         builder.setTitle("Предупреждение");
         builder.setMessage("Если вы продолжите, вся история калькулятора будет утеряна без возможности восстановления");
 

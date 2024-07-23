@@ -91,7 +91,6 @@ public class SettingActivity extends AppCompatActivity {
                 break;
             case 1:
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                break;
         }
     } // выбор светлой/темной темы
     private void applyTheme(int theme) {

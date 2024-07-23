@@ -5,6 +5,7 @@
     <dimen name="button_text_size">25sp</dimen>
     <dimen name="btn_bottom_margin"> 3dp </dimen>
     <dimen name="button_width_percent"> 0.1 </dimen>
+    <dimen name="backspace_btn_size"> 40dp </dimen>
 
     <!-- Настройки экрана -->
     <dimen name="margin_vertical"> 5dp</dimen>
