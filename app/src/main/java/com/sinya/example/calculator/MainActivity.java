@@ -370,7 +370,7 @@ public class MainActivity extends AppCompatActivity {
                             num = "";
                         } // если выставлен знак и num не пустой, то мы добавляем его в список и опустошаем
 
-                        if (i == 0 || ("/*(".indexOf(str[i-1]) > -1)) {
+                        if (i == 0 || ("/*(√^".indexOf(str[i-1]) > -1)) {
                             num += str[i];
                         } // если строка пуста или /- *- (
                         else arr.add(String.valueOf(str[i]));
@@ -384,6 +384,7 @@ public class MainActivity extends AppCompatActivity {
         }
        catch (Exception e) {
             example.setText("Ошибка");
+           example.setText(e.toString());
         } // при отлове ошибки выводится сообщение
     } // знак =
 
@@ -469,8 +470,12 @@ public class MainActivity extends AppCompatActivity {
             RemoveRange(arr, i+1, 2);
         } // √10%
         else {
-            arr.set(i, String.valueOf(sqrt(Double.parseDouble(arr.get(i+1)))));
-            RemoveRange(arr, i+1, 1);
+            int n = 0, z = IndexOfLastSqrt(arr, i)+1;
+            while(arr.get(i).equals("√")) {
+                arr.set(z, String.valueOf(sqrt(Double.parseDouble(arr.get(z)))));
+                z--;
+                RemoveRange(arr, i, 1);
+            }
         } // √10
     } // вычисление корня
     private void Pow(ArrayList<String> arr, int i) {
@@ -621,6 +626,13 @@ public class MainActivity extends AppCompatActivity {
         }
         return -1;
     } // метод находит подстроку начиная с какого-то определенного индекса списка
+
+    private int IndexOfLastSqrt(ArrayList<String> arr, int startInd) {
+        for (int i=startInd+1; i<arr.size(); i++) {
+            if (!arr.get(i).equals("√")) return i-1;
+        }
+        return startInd;
+    }
     private void setText(String textToInsert) {
         int cursorPosition = exampleAndAnswer.getSelectionStart(); // сохраняем для удобства индекс каретки в переменную
         StringBuilder newText = new StringBuilder(exampleAndAnswer.getText().toString()); // создаем новую строку
